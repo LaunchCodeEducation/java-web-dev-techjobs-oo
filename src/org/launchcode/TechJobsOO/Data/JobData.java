@@ -12,10 +12,10 @@ public class JobData {
     private ArrayList<Job> jobs = new ArrayList<>();
     private static JobData instance;
 
-    private JobFieldData<Employer> employers = new JobFieldData<>();
-    private JobFieldData<Location> locations = new JobFieldData<>();
-    private JobFieldData<CoreCompetency> coreCompetencies = new JobFieldData<>();
-    private JobFieldData<PositionType> positionTypes = new JobFieldData<>();
+//    private JobFieldData<Employer> employers = new JobFieldData<>();
+//    private JobFieldData<Location> locations = new JobFieldData<>();
+//    private JobFieldData<CoreCompetency> coreCompetencies = new JobFieldData<>();
+//    private JobFieldData<PositionType> positionTypes = new JobFieldData<>();
 
 
     private JobData() {
