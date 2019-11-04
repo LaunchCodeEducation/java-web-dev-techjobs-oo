@@ -1,4 +1,4 @@
-package org.launchcode.techjobsoo;
+package org.launchcode.techjobs_oo;
 
 public class PositionType {
     private int id;
