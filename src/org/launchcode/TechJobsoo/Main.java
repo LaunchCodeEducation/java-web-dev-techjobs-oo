@@ -1,6 +1,4 @@
-package org.launchcode.TechJobsOO;
-
-import java.util.ArrayList;
+package org.launchcode.TechJobsoo;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package org.launchcode.TechJobsOO;
+package org.launchcode.TechJobsoo;
 
 public class Job {
 
