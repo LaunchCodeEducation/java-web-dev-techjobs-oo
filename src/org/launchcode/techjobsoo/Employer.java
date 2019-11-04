@@ -1,4 +1,4 @@
-package org.launchcode.TechJobsoo;
+package org.launchcode.techjobsoo;
 
 import java.util.Objects;
 
