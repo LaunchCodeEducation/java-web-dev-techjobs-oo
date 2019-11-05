@@ -11,7 +11,9 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // TODO: Add two constructors - one to initialize a unique ID and one to initialize the id and value fields.
+    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
+    //  other five fields. The second constructor should also call the first in order to initialize
+    //  the 'id' field.
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
