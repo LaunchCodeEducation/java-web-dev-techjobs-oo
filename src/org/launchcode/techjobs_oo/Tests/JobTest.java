@@ -6,11 +6,13 @@ import org.launchcode.techjobs_oo.*;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class JobTest {
     Job testJobOne;
     Job testJobTwo;
     Job testJobThree;
+    Job testJobFour;
     Employer testEmployer;
     Location testLocation;
     PositionType testPositionType;
@@ -22,6 +24,7 @@ public class JobTest {
         testJobOne = new Job();
         testJobTwo = new Job();
         testJobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        testJobFour = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
     }
 
     @Test
@@ -31,7 +34,6 @@ public class JobTest {
     }
 
     @Test
-
     public void testJobConstructorSetsAllFields() {
         //Tests to make sure classes are assigned correctly
         assertTrue(testJobThree.getEmployer()instanceof Employer);
@@ -45,6 +47,11 @@ public class JobTest {
         assertEquals("Desert", testJobThree.getLocation().getValue());
         assertEquals("Quality Control", testJobThree.getPositionType().getValue());
         assertEquals("Persistence", testJobThree.getCoreCompetency().getValue());
+    }
 
+    @Test
+    public void testJobsForEquality() {
+        //tests to make sure the Id numbers are different even though everything else is the same
+        assertFalse(testJobThree==testJobFour);
     }
 }
