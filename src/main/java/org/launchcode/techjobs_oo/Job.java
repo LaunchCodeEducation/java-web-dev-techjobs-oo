@@ -27,7 +27,7 @@ public class Job {
         this.name = name;
         this.employer = employer;
         this.location = location;
-        this.positionType = positionType
+        this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
 
