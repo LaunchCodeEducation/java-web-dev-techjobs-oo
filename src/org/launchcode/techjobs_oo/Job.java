@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -30,7 +31,7 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+    // Added custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
     @Override
@@ -97,12 +98,29 @@ public class Job {
 //Custom toString method
     @Override
     public String toString() {
-        return ("\n ID: " + this.getId() +
-                "\n Name: " + this.getName() +
-                "\n Employer: " + this.getEmployer().getValue() +
-                "\n Location: " + this.getLocation().getValue() +
-                "\n Position Type: " + this.getPositionType().getValue() +
-                "\n Core Competency: " + this.getCoreCompetency().getValue() +
-                "\n");
+        ArrayList<Object> jobInfo = new ArrayList<Object>();
+        jobInfo.add(this.getEmployer().getValue());
+        jobInfo.add(this.getLocation().getValue());
+        jobInfo.add(this.getPositionType().getValue());
+        jobInfo.add(this.getCoreCompetency().getValue());
+
+        ArrayList<String> fieldLabels = new ArrayList<String>();
+        fieldLabels.add("\n Employer: ");
+        fieldLabels.add("\n Location: ");
+        fieldLabels.add("\n Position Type: ");
+        fieldLabels.add("\n Core Competency: ");
+
+        String jobListing = "\n ID: " + this.getId() +
+                "\n Name: " + this.getName();
+
+//iterates through both ArrayLists to return correct label and value
+        for (int i = 0; i <fieldLabels.size(); i++) {
+            if (!(jobInfo.get(i) == "")) {
+                jobListing += fieldLabels.get(i) + jobInfo.get(i);
+            } else {
+                jobListing += fieldLabels.get(i) + "Data not available";
+            }
+        }
+        return jobListing + '\n';
     }
 }

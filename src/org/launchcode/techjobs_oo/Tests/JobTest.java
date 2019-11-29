@@ -15,6 +15,7 @@ public class JobTest {
     Job testJobTwo;
     Job testJobThree;
     Job testJobFour;
+    Job testJobFive;
     Employer testEmployer;
     Location testLocation;
     PositionType testPositionType;
@@ -27,6 +28,7 @@ public class JobTest {
         testJobTwo = new Job();
         testJobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         testJobFour = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        testJobFive = new Job("Guinea Pig", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency("Persistence"));
     }
 
     @Test
@@ -67,11 +69,18 @@ public class JobTest {
     @Test
     public void toStringReturnsJobInfo() {
         //tests to make sure the toString method returns a label and job info for each field
-        assertThat( testJobThree.toString(), containsString("\n ID: " + testJobThree.getId()));
-        assertThat( testJobThree.toString(), containsString("Name: " + testJobThree.getName()));
-        assertThat( testJobThree.toString(), containsString("Employer: " + testJobThree.getEmployer().getValue()));
-        assertThat( testJobThree.toString(), containsString("Location: " + testJobThree.getLocation().getValue()));
-        assertThat( testJobThree.toString(), containsString("Position Type: " + testJobThree.getPositionType().getValue()));
-        assertThat( testJobThree.toString(), containsString("Core Competency: " + testJobThree.getCoreCompetency().getValue() + "\n"));
+        String expectedString = "\n ID: " + testJobThree.getId() +
+                "\n Name: " + testJobThree.getName() +
+                "\n Employer: " + testJobThree.getEmployer().getValue() +
+                "\n Location: " + testJobThree.getLocation().getValue() +
+                "\n Position Type: " + testJobThree.getPositionType().getValue() +
+                "\n Core Competency: " + testJobThree.getCoreCompetency().getValue() + "\n";
+        assertEquals(expectedString, testJobThree.toString());
+    }
+
+    @Test
+    public void emptyFieldTest() {
+        //tests to see if “Data not available” is returned for empty fields
+        assertThat(testJobFive.toString(), containsString("Data not available"));
     }
 }
