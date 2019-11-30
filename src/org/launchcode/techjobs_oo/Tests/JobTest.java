@@ -3,11 +3,11 @@ package org.launchcode.techjobs_oo.Tests;
 import org.junit.Before;
 
 import org.junit.Test;
-import org.launchcode.techjobs_oo.Job;
+import org.launchcode.techjobs_oo.*;
 
 import static org.junit.Assert.*;
 
-public class JobTest extends Job {
+public class JobTest {
     Job test_JobA = new Job();
     Job test_JobsB = new Job();
 
@@ -24,4 +24,10 @@ public class JobTest extends Job {
         System.out.println(test_JobsB.getId());
     }
 
+    @Test
+    public void testJobConstructorSetsAllFields() {
+        Job demoJob = new Job("Product Tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        assertEquals(true, demoJob instanceof Job);
+    }
 }
