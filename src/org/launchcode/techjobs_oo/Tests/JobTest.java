@@ -12,12 +12,6 @@ import static org.junit.Assert.*;
 public class JobTest extends Job {
     Job test_JobA = new Job();
     Job test_JobsB = new Job();
-    private int id;
-    private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
 
     @Before
     public void setUp(){
