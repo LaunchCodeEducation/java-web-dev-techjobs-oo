@@ -29,18 +29,34 @@ public class JobTest extends Job {
     @Test()
     public void testSettingJobId() {
         assertEquals(test_JobA.getId(), test_JobsB.getId(), 1);
-        assertThat("Job IDs are NOT equal", test_JobA.getId(),is(not(test_JobsB.getId())));
+        assertThat("Job IDs are equal", test_JobA.getId(),is(not(test_JobsB.getId())));
         System.out.println(test_JobA.getId());
         System.out.println(test_JobsB.getId());
     }
 
     @Test
+    //Shouldn't the setters also be tested here as well?? Or is this test testing both the getters and setters?
     public void testJobConstructorSetsAllFields() {
-        assertEquals(true, demoJobA instanceof Job);
+        assertTrue( demoJobA instanceof Job);
+        assertTrue(demoJobA.getName() instanceof String);
+        assertTrue(demoJobA.getEmployer() instanceof Employer);
+        assertTrue(demoJobA.getLocation() instanceof Location);
+        assertTrue(demoJobA.getPositionType() instanceof PositionType);
+        assertTrue(demoJobA.getCoreCompetency() instanceof CoreCompetency);
+
+
+
     }
 
     @Test
+    //Why does this test even exist, isn't it pretty much the same as "testSettingJobId()"????
     public void testEquals() {
-       assertFalse(demoJobA.equals(demoJobB));
+        int demoA_ID = demoJobA.getId();
+        int demoB_ID = demoJobB.getId();
+        assertThat("Should not be equal",demoA_ID,is(not(demoB_ID)));
+
+        //*Just want clarification on the three test in this block*
+        //assertFalse(!(demoA_ID != demoB_ID));
+        //assertFalse(demoA_ID == demoB_ID);
     }
 }
