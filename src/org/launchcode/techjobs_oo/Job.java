@@ -96,4 +96,33 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+
+        //TODO: I'm sure there's a way to loop this without so many if statement and add an extra condition for bonus
+        if (name.isBlank()){
+            setName("Data not available");
+        }
+        if (employer.getValue().isBlank()){
+            employer.setValue("Data not available");
+        }
+        if (location.getValue().isBlank()){
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue().isBlank()){
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue().isBlank()){
+            coreCompetency.setValue("Data not available");
+        }
+
+        return "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer.getValue() + "\n" +
+                "Location: " + location.getValue() + "\n" +
+                "Position Type: " + positionType.getValue() + "\n" +
+                "Core Competency: " + coreCompetency.getValue() + "\n";
+    }
 }
