@@ -100,7 +100,7 @@ public class Job {
     @Override
     public String toString() {
 
-        //TODO: I'm sure there's a way to loop this without so many if statement and add an extra condition for bonus
+
         if (name.isBlank()){
             setName("Data not available");
         }

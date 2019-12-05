@@ -1,12 +1,11 @@
 package org.launchcode.techjobs_oo.Tests;
 
-import org.junit.After;
 import org.junit.Before;
-
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+
 
 public class JobTest{
     Job test_JobA;
@@ -35,30 +34,12 @@ public class JobTest{
                 new PositionType(""), new CoreCompetency(""));
     }
 
-    //TODO: Remove before merging to master.
-    @After
-    public void done() {
-        System.out.println("Test completed!");
-    }
-
     @Test()
     public void testSettingJobId() {
         assertEquals(test_JobA.getId(), test_JobsB.getId(), 1);
-
-        //TODO Take out before merging to master
-//        assertThat("Job IDs are equal", test_JobA.getId(),is(not(test_JobsB.getId())));
-
-        //TODO Take out before merging to master
-        //System.out.println(test_JobA.getId());
-
-        //TODO Take out before merging to master
-        //System.out.println(test_JobsB.getId());
     }
 
     @Test
-    //TODO: Shouldn't the setters also be tested here as well?? Or is this test testing both the getters and setters?
-
-    //TODO: Why not just use assertNotNull statements instead of assertTrue statements?
     public void testJobConstructorSetsAllFields() {
         assertTrue( demoJobA instanceof Job);
         assertTrue(demoJobA.getName() instanceof String);
@@ -82,15 +63,6 @@ public class JobTest{
         int demoB_ID = demoJobB.getId();
         assertThat("Should not be equal",demoA_ID,is(not(demoB_ID)));
 
-        //TODO Take out before merging to master. Ask questions first
-        //*Just want clarification on the three test below as far as if and how each differs from one another*
-
-        //assertThat("Should not be equal",demoA_ID,is(not(demoB_ID)));
-
-        /*What does the ! mean in this line below? IntelliJ generated this for me, and got me curious*/
-        //assertFalse(!(demoA_ID != demoB_ID));
-
-        //assertFalse(demoA_ID == demoB_ID);
     }
 
 
@@ -105,10 +77,6 @@ public class JobTest{
                 "Core Competency: " + demoJobB.getCoreCompetency() + "\n",is(demoJobB.toString())
         );
 
-        //TODO: Why is it the test below pass only when there's a print statement above it?
-        //TODO: Is this how it's suppose to be, or did I do something wrong in the test or toString() in Jobs.java?
-        System.out.println(demoJobC);
-
         assertThat("\n" +
                 "ID: " + demoJobC.getId() + "\n" +
                 "Name: " + demoJobC + "\n" +
@@ -118,29 +86,5 @@ public class JobTest{
                 "Core Competency: " + demoJobC.getCoreCompetency() + "\n",
                 containsString("Data not available"));
 
-//
-//                assertEquals("\n" +
-//                "ID: " + demoJobC.getId() + "\n" +
-//                "Name: " + demoJobC.getName() + "\n" +
-//                "Employer: " + demoJobC.getEmployer().getValue() + "\n" +
-//                "Location: " + demoJobC.getLocation().getValue() + "\n" +
-//                "Position Type: " + demoJobC.getPositionType().getValue() + "\n" +
-//                "Core Competency: " + demoJobC.getCoreCompetency().getValue() + "\n",
-//                demoJobC.toString()
-//        );
-
-        //TODO: Attempt bonus one lat time before merge to master.
-        /*For Bonus, but can't figure out how to make my conditionals work to return "OOPS! This job does not exist."
-        Instead conditionals just force "Data not available for all fields. Attempted to loop w/conditional, and failed
-         */
-//        assertEquals("\n" +
-//                        "ID: " + demoJobD.getId() + "\n" +
-//                        "Name: " + demoJobD.getName() + "\n" +
-//                        "Employer: " + demoJobD.getEmployer().getValue() + "\n" +
-//                        "Location: " + demoJobD.getLocation().getValue() + "\n" +
-//                        "Position Type: " + demoJobD.getPositionType() + "\n" +
-//                        "Core Competency: " + demoJobD.getCoreCompetency().getValue() + "\n",
-//                        demoJobD.toString().equals("Data not available")
-//        );
     }
 }
