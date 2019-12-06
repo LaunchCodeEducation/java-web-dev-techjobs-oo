@@ -97,32 +97,42 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+
     @Override
     public String toString() {
+        String fillIn ="\n" + "ID: " + getId() + "\n";
 
 
         if (name.isBlank()){
-            setName("Data not available");
-        }
-        if (employer.getValue().isBlank()){
-            employer.setValue("Data not available");
-        }
-        if (location.getValue().isBlank()){
-            location.setValue("Data not available");
-        }
-        if (positionType.getValue().isBlank()){
-            positionType.setValue("Data not available");
-        }
-        if (coreCompetency.getValue().isBlank()){
-            coreCompetency.setValue("Data not available");
+            fillIn += "Name: Data not available" + "\n" ;
+        }else {
+            fillIn += "Name: " + name + "\n";
         }
 
-        return "\n" +
-                "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer.getValue() + "\n" +
-                "Location: " + location.getValue() + "\n" +
-                "Position Type: " + positionType.getValue() + "\n" +
-                "Core Competency: " + coreCompetency.getValue() + "\n";
+        if (employer.getValue().isBlank()){
+            fillIn += "Employer: Data not available" + "\n";
+        } else {
+            fillIn += "Employer: " + employer.getValue() + "\n";
+        }
+
+        if (location.getValue().isBlank()){
+            fillIn += "Location: Data not available" + "\n";
+        }else {
+            fillIn += "Location: " + location.getValue() + "\n";
+        }
+
+        if (positionType.getValue().isBlank()){
+            fillIn += "Position Type: Data not available" + "\n";
+        }else {
+            fillIn += "Position Type: " + positionType.getValue() + "\n";
+        }
+
+        if (coreCompetency.getValue().isBlank()){
+            fillIn += "Core Competency: Data not available" + "\n";
+        }else {
+            fillIn += "Core Competency: " + coreCompetency.getValue() + "\n";
+        }
+
+        return fillIn;
     }
 }

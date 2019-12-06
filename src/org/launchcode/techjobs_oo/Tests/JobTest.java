@@ -59,10 +59,7 @@ public class JobTest{
 
     @Test
     public void testEquals() {
-        int demoA_ID = demoJobA.getId();
-        int demoB_ID = demoJobB.getId();
-        assertThat("Should not be equal",demoA_ID,is(not(demoB_ID)));
-
+        assertFalse(demoJobA.equals(demoJobB));
     }
 
 
@@ -79,12 +76,12 @@ public class JobTest{
 
         assertThat("\n" +
                 "ID: " + demoJobC.getId() + "\n" +
-                "Name: " + demoJobC + "\n" +
+                "Name: " + "Data not available" + "\n" +
                 "Employer: " + demoJobC.getEmployer() + "\n" +
                 "Location: " + demoJobC.getLocation()+ "\n" +
                 "Position Type: " + demoJobC.getPositionType().getValue() + "\n" +
                 "Core Competency: " + demoJobC.getCoreCompetency() + "\n",
-                containsString("Data not available"));
+                is(demoJobC.toString()));
 
     }
 }
