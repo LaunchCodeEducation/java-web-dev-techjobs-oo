@@ -38,7 +38,7 @@ public class JobsTest {
    @Test
     public void testToString(){
         Job newJob = new Job ("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job newJob1 = new Job ("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job newJob1 = new Job ("Product tester", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job newJob2 = new Job (null, new Employer(null), new Location(null), new PositionType(null), new CoreCompetency(null));
         assertTrue(newJob.toString().startsWith("\n"));
         assertTrue(newJob.toString().endsWith("\n"));
@@ -51,5 +51,6 @@ public class JobsTest {
                     "\n" + "CoreCompetency: " + newJob1.getCoreCompetency() + "\n");
         assertEquals(newJob2.toString(), "OOPS! This job does not seem to exist.");
    }
+
 }
 
