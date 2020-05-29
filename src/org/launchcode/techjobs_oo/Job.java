@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Objects;
@@ -44,23 +45,26 @@ public class Job {
         String aCoreCompetency = this.coreCompetency.getValue();
         String noData = "Data not available";
 
-        if (aName == " " || aName == null){
+//        if ( == "" && == null){
+//
+//        }
+        if (aName == "" || aName == null){
             aName = noData;
         }
 
-        if (aEmployer == " " || aEmployer == null){
+        if (aEmployer == "" || aEmployer == null){
             aEmployer = noData;
         }
 
-        if (aLocation == " " || aLocation == null){
+        if (aLocation == "" || aLocation == null){
             aLocation = noData;
         }
 
-        if (aPositionType == " " || aPositionType == null){
+        if (aPositionType == "" || aPositionType == null){
             aPositionType = noData;
         }
 
-        if (aCoreCompetency == " " || aCoreCompetency == null){
+        if (aCoreCompetency == "" || aCoreCompetency == null){
             aCoreCompetency = noData;
         }
 
