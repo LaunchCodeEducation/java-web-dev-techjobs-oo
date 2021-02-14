@@ -42,11 +42,11 @@ public class JobTest {
     @Test
     public void testJobToString(){
                assertEquals(" \n" +
-                "id: 8\n" +
+                "id: " + myTestJob.getId() + "\n" +
                 "name: 'Product tester'\n" +
                 "employer: ACME\n" +
                 "location: Desert\n" +
-                "positionType: PositionTypes:{value: Quality control'}\n" +
+                "positionType: Quality control\n" +
                 "coreCompetency: Persistence " +
                 "\n",String.valueOf(myTestJob));
     }
