@@ -28,24 +28,23 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-
     }
 
     @Override
     public String toString() {
-        if(name.equals("")){
+        if(name.isEmpty()){
             this.name = ("Data not available");
         }
-        if(employer.equals("")){
+        if(employer.getValue().isEmpty()){
             this.employer.setValue("Data not available");
         }
-        if(location.equals("")){
+        if(location.getValue().isEmpty()){
             this.location.setValue("Data not available");
         }
-        if(positionType.equals("")){
+        if(positionType.getValue().isEmpty()){
             this.positionType.setValue("Data not available");
         }
-        if(coreCompetency.equals("")){
+        if(coreCompetency.getValue().isEmpty()){
             this.coreCompetency.setValue("Data not available");
         }
         return " "+ '\n' +
