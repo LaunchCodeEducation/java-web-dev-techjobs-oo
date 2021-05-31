@@ -42,9 +42,9 @@ public abstract class JobField {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CoreCompetency)) return false;
-        CoreCompetency that = (CoreCompetency) o;
-        return id == that.id;
+        if (!(o instanceof JobField)) return false;
+        JobField jobField = (JobField) o;
+        return getId() == jobField.getId();
     }
 
     @Override
