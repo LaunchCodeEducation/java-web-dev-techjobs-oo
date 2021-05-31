@@ -42,6 +42,36 @@ public class Job {
     }
 
     @Override
+    public String toString(){
+        //Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+               //new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        //Job job2 = new Job();
+        //Job[] jobs = {job1,job2};
+//        String testJobName = job1.getName();
+//        String testEmployer = job1.getEmployer().getValue();
+//        String testLocation = job1.getLocation().getValue();
+//        String testPositionType = job1.getPositionType().getValue();
+//        String testCoreCompetency = job1.getCoreCompetency().getValue();
+        String output = "";
+        if(name == null || name.isEmpty()) {
+           output += '\n' + "ID: " + id + '\n' + "Job Name: " + "Data not available";
+        }else{ output += '\n' + "ID: " + id + '\n'+ "Job Name: " + name ;}
+        if(employer == null || employer.getValue().isEmpty()){
+            output += '\n' + "Employer: " + "Data not available";
+        }else{ output += '\n' + "Employer: " + employer.getValue() ;}
+        if(location == null || location.getValue().isEmpty()){
+            output += '\n' + "Location: " + "Data not available";
+        }else{ output += '\n' + "Location: " + location.getValue();}
+        if(positionType == null || positionType.getValue().isEmpty()){
+            output += '\n' + "PositionType: " + "Data not available";
+        }else{ output += '\n' + "Position Type: " + positionType.getValue();}
+        if(coreCompetency == null || coreCompetency.getValue().isEmpty()){
+            output += '\n' + "CoreCompetency: " + "Data not available" + '\n';
+        }else{ output += '\n' + "Core Competency: " + coreCompetency.getValue() + '\n';}
+        return output;
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(id);
     }
